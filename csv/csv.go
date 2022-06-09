@@ -13,7 +13,7 @@ type Csv struct {
 }
 
 func NewCsv(name string, fields []string) (*Csv, error) {
-	f, err := os.OpenFile(name, os.O_WRONLY|os.O_APPEND, 0666)
+	f, err := os.OpenFile(name, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0666)
 	if err != nil {
 		return nil, err
 	}
